@@ -1,35 +1,18 @@
+class Employee:
+    def greet(self):
+        print("Hello Employee")
 
 
-class Animal:
-    def __init__(self):
-        print("Animal Constructor")
-        self.age = 1
-
-    def eat(self):
-        print("eat")
-
-    def sleep(self):
-        print("sleep")
+class Person:
+    def greet(self):
+        print("Hello person")
 
 
-class Mammal(Animal):
-    def __init__(self):
-        print("Mammal Constructor")
-        self.weight = 10
-        # super().__init__()
-
-    def walk(self):
-        print("walk")
+class Manager(Person, Employee):
+    pass
 
 
-class Fish(Animal):
-    def swim(self):
-        print("swim")
-
-
-mammal = Mammal()
-print(mammal.age)
-print(mammal.weight)
-# print(issubclass(Mammal, object))
-# fish = Fish()
-# fish.sleep()
+# manager object takes the first parent class look through for the method specified,
+manager = Manager()
+# If can't find in the first then it will look in the other parent class.
+manager.greet()
